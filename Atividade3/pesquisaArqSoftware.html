@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Hugo Florio Iorio">
+  <link rel="stylesheet" href="style.css"> <!--Referenciar arquivo css utilizado-->
+  <title>Pesquisa sobre Arquitetura de Software</title>
+</head>
+<body>
+  <nav aria-label="Sumário"> <!--aria label: define um nome acessivel para elementos de texto nao visuais-->
+    <h2>Sumário</h2>
+    <ol> <!--ol: lista ordenada (ordered list), usa de links <a> para facilitar a navegação-->
+      <li><a href="#introducao">Introdução</a></li>
+      <li><a href="#conceitos">Conceitos</a></li>
+      <li><a href="#padroes">Padrões</a></li>
+      <li><a href="#escolhas">Escolhas</a></li>
+      <li><a href="#tendencias">Tendências</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+      <li><a href="#referencias">Referências</a></li>
+    </ol>
+  </nav>
+
+  <header>
+    <img src="ImagemCapa.png" alt="Logos da Fatec Sorocaba, Centro Paula Souza e Estado de São Paulo" width="600" title="Logos da Fatec Sorocaba, Centro Paula Souza e Estado de São Paulo"> <!--Imagem local, deve ser inclusa com os arquivos HTML para ser exibida-->
+    <p id="disciplina"><strong>PROGRAMAÇÃO WEB</strong></p> <!--Tag <strong>: Dar enfase no texto, deixando-o em negrito-->
+    <h1>PESQUISA SOBRE ARQUITETURA DE SOFTWARE</h1>
+    
+    <address> <!--tag <adress>: Utilizada para destacar local, data e contato-->
+      <strong>Hugo Florio Iorio</strong> - RA 0030482511024
+      <br>
+      Fatec Sorocaba - Centro Paula Souza
+      <br>
+      Sorocaba, Agosto/2026
+    </address>
+  </header>
+
+  <br>
+  <hr> <!--tag <hr>: Adiciona uma linha visual, sendo util para separar partes de um texto-->
+  <br>
+
+  <main>
+
+    <section id="introducao">
+      <h2>1. Introdução</h2>
+      <p>
+        A arquitetura de software desempenha um papel fundamental no ciclo de vida de sistemas computacionais, atuando como a fundação estrutural sobre a qual todas as funcionalidades, requisitos não funcionais e evoluções do sistema são construídos. Em um cenário tecnológico dinâmico, onde a demanda por soluções ágeis e escaláveis é constante, compreender as decisões de design e a organização dos componentes torna-se essencial para garantir a qualidade, o desempenho e a sustentabilidade dos sistemas ao longo do tempo.
+      </p>
+      <p>
+        Este trabalho tem como objetivo apresentar uma visão conceitual e prática sobre a arquitetura de software, abordando seus conceitos fundamentais, principais elementos constitutivos e os padrões arquiteturais predominantes. Além disso, analisa-se a relevância do processo contínuo de tomada de decisão na escolha de abordagens estruturais, bem como as principais tendências modernas que vêm moldando o ecossistema de desenvolvimento de software, como os modelos em nuvem e a integração de tecnologias de inteligência artificial.
+      </p>
+    </section>
+
+    <br>
+
+    <section id="conceitos">
+      <h2>2. Conceitos</h2>
+      <p>
+        Arquitetura de software pode ser definida como um conjunto de decisões de design tomadas durante o planejamento e desenvolvimento de um software, tendo como propósito proporcionar maior funcionalidade, escalabilidade e manutenção, servindo essencialmente como a "espinha dorsal" do desenvolvimento (<cite>SU et al., 2025</cite>). <!--tag <cite>: demarca uma citacao, deixando o texto em italico-->
+      </p>
+      <p>
+        Neste sentido, <cite>Medvidovic e Taylor (2010)</cite> descrevem alguns conceitos importantes:
+      </p>
+
+      <dl> <!--tag <dl>: utilizada para criar uma lista de topicos com descricoes (description list)-->
+        <dt><strong>Componentes:</strong></dt> <!--topico da lista-->
+        <dd>Unidades de computação ou abstração do sistema;</dd> <!--descricao do topico-->
+
+        <dt><strong>Conectores:</strong></dt>
+        <dd>Mediadores das interações entre os componentes;</dd>
+
+        <dt><strong>Configurações (ou relacionamentos):</strong></dt>
+        <dd>Arranjos entre componentes e conectores, junto das regras que regem suas interações;</dd>
+
+        <dt><strong>Escalabilidade:</strong></dt>
+        <dd>Capacidade do sistema de crescer;</dd>
+
+        <dt><strong>Disponibilidade:</strong></dt>
+        <dd>Capacidade do sistema de permanecer acessível aos seus usuários;</dd>
+
+        <dt><strong>Segurança:</strong></dt>
+        <dd>Proteção de dados ou recursos do sistema;</dd>
+
+        <dt><strong>Confiabilidade:</strong></dt>
+        <dd>Garantia de que o sistema irá operar como esperado;</dd>
+
+        <dt><strong>Manutenibilidade:</strong></dt>
+        <dd>Facilidade com que o sistema pode ser modificado após seu lançamento.</dd>
+      </dl>
+    </section>
+
+    <br>
+
+    <section id="padroes">
+      <h2>3. Padrões</h2>
+      <p>
+        Na prática da arquitetura de software, padrões de arquitetura podem ser descritos como sendo soluções universais e reutilizáveis para resolver problemas comuns (<cite>BUSCHMANN; HENNEY, 2008</cite>). Também podem ser chamados de “estilos arquiteturais”, descrevendo esquemas de organização fundamentais para o software.
+      </p>
+      <p>
+        Dos padrões de arquitetura comumente utilizados, <cite>Farshidi, Jansen e Van Der Werf (2020)</cite> descrevem:
+      </p>
+
+      <ul> <!--<ul>: lista nao ordenada (unordered list)-->
+        <li><strong>Camadas:</strong> Organiza o sistema em diferentes níveis de abstração, focando em reusabilidade, mas podendo enfrentar desafios com escalabilidade;</li>
+        <li><strong>Cliente-Servidor:</strong> Estrutura na qual um cliente solicita recursos e um servidor os fornece;</li>
+        <li><strong>Tubos e Filtros:</strong> Arquitetura focada no fluxo de dados através de passos independentes (filtros) conectados por canais de comunicação (tubos);</li>
+        <li><strong>Model-View-Controller:</strong> Visando facilitar o design de aplicações, divide seu desenvolvimento em três partes, que são o modelo (dados e lógica), visão (interface de usuário) e o controlador (intermediário entre lógica e interface de usuário);</li>
+        <li><strong>Arquitetura Monolítica:</strong> Arquitetura mais tradicional, é caracterizada como sistemas que reúnem, em uma única unidade, os diversos componentes presentes no software;</li>
+        <li><strong>Arquitetura de Microsserviços:</strong> Arquitetura mais complexa que se utiliza de recursos fracamente acoplados, mas que têm menor dependência entre si, tendo melhor escalabilidade e resiliência.</li>
+      </ul>
+    </section>
+
+    <br>
+
+    <section id="escolhas">
+      <h2>4. Escolhas</h2>
+      <p>
+        As escolhas tomadas na arquitetura de software têm grande importância no andamento e resultado de projetos, pois definem quais serão os componentes, os recursos e como eles serão utilizados, ditando essencialmente como será sua funcionalidade e evolução (<cite>MEDVIDOVIC; TAYLOR, 2010</cite>). O processo de tomada de decisões é contínuo durante o desenvolvimento do software, de forma que o arquiteto deve avaliar as diferentes alternativas de acordo com o que considera ideal para o projeto (<cite>FARSHIDI; JANSEN; VAN DER WERF, 2020</cite>).
+      </p>
+      <p>
+        Diferentes arquiteturas têm diferentes pontos fortes e diferentes fraquezas. A arquitetura de microsserviços, por exemplo, destaca-se pela forte escalabilidade e flexibilidade dos componentes, mas também apresenta alta complexidade operacional, principalmente na consistência de dados (<cite>AGWENYI; MBUGUA, 2025</cite>). Por outro lado, arquiteturas monolíticas, com forte acoplamento, podem ser muito mais simples em comparação, mas podem sofrer com escalabilidade limitada, visto que modificar um dos componentes pode comprometer o funcionamento de outros componentes.
+      </p>
+    </section>
+
+    <br>
+
+    <section id="tendencias">
+      <h2>5. Tendências</h2>
+      <p>
+        As tendências modernas em arquitetura de software são lideradas pelas abordagens <em>cloud-native</em> e <em>serverless</em>, que se tornaram modelos centrais da infraestrutura tecnológica atual ao focar em escalabilidade e flexibilidade. O design <em>cloud-native</em> utiliza containers e ferramentas de orquestração como o Kubernetes (ferramenta de código aberto para gerenciamento de aplicações em contêiner) para garantir alta disponibilidade e resiliência, permitindo uma entrega de software mais rápida (<cite>SU et al., 2025</cite>).
+      </p>
+      <p> <!-- Tag <em>: Da enfase ao texto, deixando-o em italico - util para termos em ingles -->
+        Complementarmente, o modelo <em>serverless</em> permite que desenvolvedores criem e implantem aplicações sem a necessidade de gerenciar servidores, utilizando um sistema de custo por uso e escalonamento automático, o que reduz custos operacionais e simplifica o processo de desenvolvimento (<cite>AGWENYI; MBUGUA, 2025</cite>).
+      </p>
+      <p>
+        Além disso, a recente popularização de modelos de inteligência artificial também apresentou uma nova abordagem à arquitetura de software, integrando ferramentas de geração e análise para automatizar tarefas, agilizando o desenvolvimento e aumentando a produtividade, embora ainda existam desafios e implicações éticas (<cite>AGWENYI; MBUGUA, 2025</cite>).
+      </p>
+    </section>
+
+    <br>
+
+    <section id="conclusao">
+      <h2>6. Conclusão</h2>
+      <p>
+        Diante do estudo realizado, constata-se que a arquitetura de software não é apenas uma etapa preliminar de modelagem, mas sim uma disciplina essencial que direciona a viabilidade técnica e operacional de um sistema. A escolha adequada de conceitos, componentes e padrões arquiteturais impacta diretamente a capacidade de escalabilidade, manutenção, resiliência e segurança do software em longo prazo.
+      </p>
+      <p>
+        Por fim, observa-se que o avanço contínuo das infraestruturas baseadas em nuvem e a incorporação de inteligência artificial vêm redefinindo os papéis e os desafios na engenharia de software. Compreender o alinhamento entre as necessidades do negócio, as trocas entre benefícios e malefícios operacionais e as tendências emergentes é indispensável para que arquitetos e desenvolvedores possam projetar soluções robustas, adaptáveis e alinhadas às crescentes demandas do mercado de tecnologia.
+      </p>
+    </section>
+
+    <br>
+
+    <section id="referencias"> <!--tagert="_blank" faz o link ser aberto em uma nova janela, rel="noopener" faz o navegador abrir o link sem dar acesso ao documento que o abriu-->
+      <h2>7. Referências</h2>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>AGWENYI, C. A.; MBUGUA, S. M. Trends in Software Architecture Designs: Evolution and Current State. <em>International Journal of Innovative Science and Research Technology</em>, v. 10, n. 3, p. 1725-1729, mar. 2025. DOI: <a href="https://doi.org/10.38124/ijisrt/25mar1311" target="_blank" rel="noopener">https://doi.org/10.38124/ijisrt/25mar1311</a></li>
+        <br>
+        <li>BUSCHMANN, Frank; HENNEY, Kevlin. <em>Pattern-Oriented Software Architecture: The Craft of Software Architecture</em>. Munich: Siemens AG / Curbralan Limited, 2008. Presentation slides from OOP 2008, Munich, Germany, 21-25 Jan. 2008. Disponível em: <a href="https://www.researchgate.net/publication/228722744_Pattern-oriented_software_architecture" target="_blank" rel="noopener">https://www.researchgate.net/publication/228722744_Pattern-oriented_software_architecture</a></li>
+        <br>
+        <li>FARSHIDI, Siamak; JANSEN, Slinger; VAN DER WERF, Jan Martijn. Capturing software architecture knowledge for pattern-driven design. <em>The Journal of Systems &amp; Software</em>, v. 169, p. 110714, nov. 2020. DOI: <a href="https://doi.org/10.1016/j.jss.2020.110714" target="_blank" rel="noopener">https://doi.org/10.1016/j.jss.2020.110714</a></li>
+        <br>
+        <li>MEDVIDOVIC, Nenad; TAYLOR, Richard N. Software Architecture: Foundations, Theory, and Practice. In: <em>INTERNATIONAL CONFERENCE ON SOFTWARE ENGINEERING (ICSE)</em>, 32., 2010, Cape Town. Proceedings [...]. Cape Town: ACM, 2010. p. 471-472. DOI: <a href="https://doi.org/10.1145/1810295.1810433" target="_blank" rel="noopener">https://doi.org/10.1145/1810295.1810433</a></li>
+        <br>
+        <li>SU, Ruoyu et al. Emerging Trends in Software Architecture from the Practitioner’s Perspective: A Five-Year Review. <em>arXiv preprint arXiv:2507.14554v2</em>, 25 jul. 2025. Disponível em: <a href="https://arxiv.org/abs/2507.14554v2" target="_blank" rel="noopener">https://arxiv.org/abs/2507.14554v2</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
