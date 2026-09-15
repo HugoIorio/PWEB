@@ -62,6 +62,7 @@ body {
     margin: 50px auto;
     max-width: 1720px;
     min-width: 240px;
+    background-color: transparent;
 }
 
 .a {
