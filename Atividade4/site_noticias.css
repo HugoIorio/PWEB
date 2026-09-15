@@ -1,0 +1,252 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.topbar {
+  position: fixed;  
+  display: flex;
+  align-items: center;   
+  top: 0;              
+  left: 0;           
+  width: 100%;         
+  height: 60px;        
+  z-index: 1000;      
+  color: white;
+  font-weight: bold;
+  background-color: #0d3489;
+}
+
+.topbar h2 {
+  font-size: 30px;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+* {
+    color: white;
+    background: #1d1d1d;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#slogan {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#slogan h2 {
+  font-size: 100px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#slogan h3 {
+  font-size: 50px;
+  font-weight: 100;
+  margin-top: 0px;
+}
+
+body {
+  margin: 10px;
+  padding-top: 60px;   
+}
+
+.container-box {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto;   
+    grid-template-areas: 
+        'a a b c'
+        'a a b c'
+        'd e f g';
+    margin: 50px auto;
+    max-width: 1720px;
+    min-width: 240px;
+}
+
+.a {
+    grid-area: a;
+}
+
+.a h3 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    text-align: justify;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px
+}
+
+.a p {
+  font-size: 32px;
+  margin-top: 0;
+  text-align: justify;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  line-height: 1.8;
+}
+
+.b {
+    grid-area: b;
+}
+
+.b h3 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.b p {
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.b img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 320px;        
+    height: 200px;        
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 10px;
+}
+
+.c {
+    grid-area: c;
+}
+
+.c h3 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.c p {
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.c img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 320px;        
+    height: 200px;        
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 10px;
+}
+
+.d {
+    grid-area: d;
+}
+
+.d h4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.d img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 220px;        
+    height: 125px;        
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 10px;
+}
+
+.d p {
+    text-align: justify;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+.e {
+    grid-area: e;
+}
+
+.e h4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.e img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 220px;        
+    height: 125px;         
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 10px;
+}
+
+.e p {
+    text-align: justify;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+.f {
+    grid-area: f;
+}
+
+.f h4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.f img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 220px;        
+    height: 125px;        
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 10px;
+}
+
+.f p {
+    text-align: justify;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+.g {
+    grid-area: g;
+}
+
+.g h4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.g img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 220px;        
+    height: 125px;        
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 10px;
+}
+
+.g p {
+    text-align: justify;
+    margin-right: 35px;
+    margin-left: 35px;
+}
