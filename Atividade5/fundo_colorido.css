@@ -1,0 +1,75 @@
+#titulo {
+    display: flex;
+    height: 500px;
+    width: 500px;
+}
+
+@media screen and (min-width: 1921px) {
+
+    #titulo::after {
+        content: "Verde";
+    }
+    #titulo {
+        background-color: rgb(18, 172, 41);
+    }
+}
+
+@media screen and (max-width: 1920px) {
+
+    #titulo::after {
+        content: "Amarelo";
+    }
+    #titulo {
+        background-color: rgb(255, 209, 42);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+
+    #titulo::after {
+        content: "Roxo";
+    }
+    #titulo {
+        background-color: rgb(137, 34, 211);
+    }
+}
+
+@media screen and (max-width: 1080px) {
+
+    #titulo::after {
+        content: "Vermelho";
+    }
+    #titulo {
+        background-color: rgb(246, 35, 35);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    #titulo::after {
+        content: "Rosa";
+    }
+    #titulo {
+        background-color: rgb(219, 82, 196);
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #titulo::after {
+        content: "Laranja";
+    }
+    #titulo {
+        background-color: rgb(228, 108, 9);
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    #titulo::after {
+        content: "Azul";
+    }
+    #titulo {
+        background-color: rgb(53, 70, 136);
+    }
+}
