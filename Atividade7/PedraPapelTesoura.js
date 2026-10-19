@@ -13,7 +13,7 @@ switch(aleatorio) {
     case 2:
         jog2 = "tesoura";
         break;
-    deafult:
+    default:
         jog2 = "erro";
         break;
 }
