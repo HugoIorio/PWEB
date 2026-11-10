@@ -1,0 +1,49 @@
+-- Alimentos que compõem cada refeição.
+-- quantidade: SEMPRE na unidade base do alimento (g ou ml).
+-- A conversão para fatia/colher/copo é feita apenas na tela, usando porcao_padrao.
+
+CREATE TABLE tb_refeicao_alimentos (
+    id_associacao_ali_ref INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    id_refeicao           INTEGER NOT NULL REFERENCES tb_refeicao(id_refeicao) ON DELETE CASCADE,
+    id_alimento           INTEGER NOT NULL REFERENCES tb_alimento(id_alimento) ON DELETE RESTRICT,
+    quantidade            REAL    NOT NULL CHECK (quantidade > 0)
+);
+
+CREATE INDEX idx_refeicao_alimentos_refeicao ON tb_refeicao_alimentos(id_refeicao);
+
+-- Itens de uma refeição já com os dados do alimento (para montar as telas).
+selecionarItensDaRefeicao:
+SELECT
+    ra.id_associacao_ali_ref,
+    ra.id_refeicao,
+    ra.quantidade,
+    a.id_alimento,
+    a.nome,
+    a.imagem,
+    a.calorias,
+    a.proteina_g,
+    a.carboidrato_g,
+    a.gordura_g,
+    a.fibra_g,
+    a.sodio_mg,
+    a.acucar_g,
+    a.unidade_medida,
+    a.tipo_unidade_padrao,
+    a.porcao_padrao
+FROM tb_refeicao_alimentos ra
+JOIN tb_alimento a ON a.id_alimento = ra.id_alimento
+WHERE ra.id_refeicao = :idRefeicao
+ORDER BY ra.id_associacao_ali_ref;
+
+inserirItem:
+INSERT INTO tb_refeicao_alimentos (id_refeicao, id_alimento, quantidade) VALUES (?, ?, ?);
+
+atualizarQuantidadeItem:
+UPDATE tb_refeicao_alimentos SET quantidade = :quantidade WHERE id_associacao_ali_ref = :idAssociacao;
+
+excluirItem:
+DELETE FROM tb_refeicao_alimentos WHERE id_associacao_ali_ref = :idAssociacao;
+
+-- Usada ao excluir uma refeição, sem depender de PRAGMA foreign_keys estar ativo.
+excluirItensDaRefeicao:
+DELETE FROM tb_refeicao_alimentos WHERE id_refeicao = :idRefeicao;

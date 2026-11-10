@@ -1,0 +1,24 @@
+-- Refeições montadas pelo usuário (o "cardápio").
+
+CREATE TABLE tb_refeicao (
+    id_refeicao INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    nome        TEXT    NOT NULL
+);
+
+contarRefeicoes:
+SELECT COUNT(*) FROM tb_refeicao;
+
+selecionarRefeicoes:
+SELECT * FROM tb_refeicao ORDER BY id_refeicao;
+
+inserirRefeicao:
+INSERT INTO tb_refeicao (nome) VALUES (?);
+
+atualizarNomeRefeicao:
+UPDATE tb_refeicao SET nome = :nome WHERE id_refeicao = :id;
+
+excluirRefeicao:
+DELETE FROM tb_refeicao WHERE id_refeicao = :id;
+
+ultimoIdInserido:
+SELECT last_insert_rowid();

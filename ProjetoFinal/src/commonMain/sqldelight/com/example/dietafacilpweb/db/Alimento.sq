@@ -1,0 +1,42 @@
+-- Catálogo de alimentos.
+-- Os valores nutricionais (calorias, proteina_g, ...) são armazenados POR 1 g (ou 1 ml) do alimento.
+-- A aplicação multiplica pela quantidade desejada (porção padrão ou quantidade escolhida).
+
+CREATE TABLE tb_alimento (
+    id_alimento         INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    nome                TEXT    NOT NULL,
+    imagem              TEXT,                      -- Nome da imagem, que fica em ~/commonMain/composeResources/files/
+    calorias            REAL    NOT NULL,
+    proteina_g          REAL    NOT NULL,
+    carboidrato_g       REAL    NOT NULL,
+    gordura_g           REAL    NOT NULL,
+    fibra_g             REAL    NOT NULL,
+    sodio_mg            REAL    NOT NULL,
+    acucar_g            REAL    NOT NULL,
+    unidade_medida      TEXT    NOT NULL DEFAULT 'g' CHECK (unidade_medida IN ('g', 'ml')),
+    tipo_unidade_padrao TEXT    NOT NULL DEFAULT 'unidade',  -- fatia, unidade, colher, copo...
+    porcao_padrao       REAL    NOT NULL           -- g/ml em uma unidade padrão
+);
+
+contarAlimentos:
+SELECT COUNT(*) FROM tb_alimento;
+
+selecionarTodos:
+SELECT * FROM tb_alimento ORDER BY nome;
+
+selecionarSugestoes:
+SELECT * FROM tb_alimento ORDER BY id_alimento LIMIT 3;
+
+buscarPorNome:
+SELECT * FROM tb_alimento
+WHERE nome LIKE '%' || :termo || '%'
+ORDER BY nome;
+
+selecionarPorId:
+SELECT * FROM tb_alimento WHERE id_alimento = :id;
+
+inserirAlimento:
+INSERT INTO tb_alimento (
+    nome, imagem, calorias, proteina_g, carboidrato_g, gordura_g,
+    fibra_g, sodio_mg, acucar_g, unidade_medida, tipo_unidade_padrao, porcao_padrao
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
